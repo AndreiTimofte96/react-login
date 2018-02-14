@@ -243,3 +243,12 @@ label {
 .register:hover {
     opacity: 0.7;    
 }
+
+.statusGreen{
+  background-color: #00FF00;
+}
+
+.statusRed{
+  background-color:#ff6b72;
+  
+}
