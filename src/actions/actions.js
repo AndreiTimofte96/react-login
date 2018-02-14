@@ -1,0 +1,2 @@
+export const SET_USERNAME_TERM = 'SET_USERNAME_TERM';
+export const GET_API_DATA = 'GET_API_DATA';
