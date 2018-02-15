@@ -88,6 +88,7 @@ class Landing extends Component {
 		}
 	}
     render(){
+		const {isLogin} = this.state;
 			if (this.state.loginSuccesful === true){
 				return(
 					<Homepage />
@@ -100,11 +101,26 @@ class Landing extends Component {
 							<div className="row">
 								<div className="col-md-6 col-md-offset-3">
 									<div className="panel panel-login">
+									<div className="panel-heading">
+														<div className="row">
+															<div className="col-xs-6 tabs">
+																<div className="" id="login-form-link" onClick={this.loginClick}>
+																	<div className={`landing-tab login ${isLogin === true ? 'active': ''}`}>LOGIN</div>
+																</div>
+															</div>
+															<div className="col-xs-6 tabs">
+																<div id="register-form-link" onClick={this.registerClick}>
+																	<div className={`landing-tab register ${isLogin === false ? 'active': ''}`}>REGISTER</div>
+																</div>
+															</div>
+														</div>
+													</div>
 										<div className="panel-body">
+										
 											<div className="row">
 												<div className="col-lg-12">
 													{
-														this.state.isLogin ? 
+														isLogin === true ? 
 														<Login 
 															username={this.props.username}
 															password={this.props.password}
@@ -130,20 +146,7 @@ class Landing extends Component {
 															handleRegister={() =>{this.handleRegister();}} 
 														/>
 													}
-													<div className="panel-heading">
-														<div className="row">
-															<div className="col-xs-6 tabs">
-																<div className="active" id="login-form-link" onClick={this.loginClick}>
-																	<div className="login">LOGIN</div>
-																</div>
-															</div>
-															<div className="col-xs-6 tabs">
-																<div id="register-form-link" onClick={this.registerClick}>
-																	<div className="register">REGISTER</div>
-																</div>
-															</div>
-														</div>
-													</div>
+													
 												</div>
 											</div>
 										</div>
